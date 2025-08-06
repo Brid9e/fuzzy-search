@@ -1,0 +1,44 @@
+{
+  "name": "@brid9e/fuzzy-search",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "智能模糊搜索库 - 性能优化版TypeScript实现",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "pnpm run clean && pnpm run build"
+  },
+  "keywords": [
+    "fuzzy",
+    "search",
+    "typescript",
+    "chinese",
+    "performance",
+    "similarity",
+    "matching"
+  ],
+  "author": "@brid9e",
+  "license": "MIT",
+  "devDependencies": {
+    "tsdown": "^0.2.17",
+    "typescript": "^5.9.2"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "packageManager": "pnpm@8.0.0"
+}
