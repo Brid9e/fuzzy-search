@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "type": "module",
   "description": "智能模糊搜索库 - 性能优化版TypeScript实现",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
       "types": "./dist/index.d.ts"
     }
   },
@@ -31,8 +31,19 @@
     "similarity",
     "matching"
   ],
-  "author": "@brid9e",
+  "author": {
+    "name": "@brid9e",
+    "url": "https://github.com/Brid9e"
+  },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Brid9e/fuzzy-search.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Brid9e/fuzzy-search/issues"
+  },
+  "homepage": "https://github.com/Brid9e/fuzzy-search#readme",
   "devDependencies": {
     "tsdown": "^0.2.17",
     "typescript": "^5.9.2"
