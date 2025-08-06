@@ -1,6 +1,6 @@
 {
   "name": "@brid9e/fuzzy-search",
-  "version": "1.0.0",
+  "version": "0.0.1-alpha.1",
   "type": "module",
   "description": "智能模糊搜索库 - 性能优化版TypeScript实现",
   "main": "dist/index.cjs",
