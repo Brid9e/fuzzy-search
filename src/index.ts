@@ -1,83 +1,42 @@
 // ==================== 类型定义 ====================
 
-/**
- * 权重配置接口
- */
 export interface WeightConfig {
-  /** 完全匹配权重 */
   exactMatch: number;
-  /** 前缀匹配权重 */
   prefixMatch: number;
-  /** 包含匹配权重 */
   containsMatch: number;
-  /** 字符相似度权重 */
   charSimilarity: number;
-  /** 长度相似度权重 */
   lengthSimilarity: number;
-  /** 词边界匹配权重 */
   wordBoundary: number;
-  /** 子串匹配权重 */
   substringMatch: number;
-  /** 共同前缀权重 */
   commonPrefix: number;
 }
 
-/**
- * 搜索选项接口
- */
 export interface SearchOptions {
-  /** 最小匹配分数 */
   minScore?: number;
-  /** 是否区分大小写 */
   caseSensitive?: boolean;
-  /** 权重配置 */
   weightConfig?: Partial<WeightConfig>;
-  /** 启用缓存 */
   enableCache?: boolean;
-  /** 最大编辑距离阈值 */
   maxEditDistance?: number;
 }
 
-/**
- * 匹配详情接口
- */
 export interface MatchDetails {
-  /** 是否完全匹配 */
   exactMatch: boolean;
-  /** 是否前缀匹配 */
   prefixMatch: boolean;
-  /** 是否包含匹配 */
   containsMatch: boolean;
-  /** 字符相似度 */
   charSimilarity: number;
-  /** 长度相似度 */
   lengthSimilarity: number;
-  /** 编辑相似度 */
   editSimilarity: number;
-  /** 词匹配数量（仅在All版本中使用） */
   wordMatches?: number;
 }
 
-/**
- * 搜索结果接口
- */
 export interface SearchResult<T = any> {
-  /** 匹配的项目 */
   item: T;
-  /** 匹配分数 */
   score: number;
-  /** 匹配详情 */
   details: MatchDetails;
 }
 
-/**
- * 可搜索的对象类型
- */
 export type SearchableItem = Record<string, any>;
 
-/**
- * 默认权重配置常量
- */
 export const DEFAULT_WEIGHT_CONFIG: WeightConfig = {
   exactMatch: 1.0,
   prefixMatch: 0.8,
@@ -89,9 +48,6 @@ export const DEFAULT_WEIGHT_CONFIG: WeightConfig = {
   commonPrefix: 0.85
 };
 
-/**
- * 默认搜索选项
- */
 export const DEFAULT_SEARCH_OPTIONS: SearchOptions = {
   minScore: 0.3,
   caseSensitive: false,
@@ -104,11 +60,6 @@ export const DEFAULT_SEARCH_OPTIONS: SearchOptions = {
 
 /**
  * 智能模糊搜索方法（性能优化版）
- * @param list - 要搜索的数组
- * @param field - 要搜索的字段名
- * @param searchTerm - 搜索关键词
- * @param options - 配置选项
- * @returns 返回匹配度最高的第一个结果，如果没有匹配则返回null
  */
 export function smartFuzzySearch<T extends SearchableItem>(
   list: T[],
